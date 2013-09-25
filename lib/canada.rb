@@ -1,27 +1,31 @@
 require "canada/version"
 
-class Object
+module Canada
   EH_METHOD_REGEXP = /\A(?<method_name>.+)_eh\?\z/
 
-  def respond_to?(meth, include_private = false)
-    if (m = EH_METHOD_REGEXP.match(meth))
-      super || super("#{m[:method_name]}?", include_private)
-    else
-      super
+  module ObjectExtensions
+    def respond_to_missing?(meth, include_all = false)
+      if (m = EH_METHOD_REGEXP.match(meth))
+        super || self.respond_to?("#{m[:method_name]}?", include_all)
+      else
+        super
+      end
+    end
+
+    def method_missing(meth, *args, &block)
+      if (m = EH_METHOD_REGEXP.match(meth))
+        self.public_send("#{m[:method_name]}?", *args, &block)
+      else
+        super
+      end
     end
   end
 
-  def method_missing(meth, *args, &block)
-    if (m = EH_METHOD_REGEXP.match(meth))
-      self.public_send("#{m[:method_name]}?", *args, &block)
-    else
-      super
-    end
-  end
-end
+  ::Object.send(:include, ObjectExtensions)
 
-module Kernel
-  def aboot(obj)
-    obj.inspect
+  module ::Kernel
+    def aboot(obj)
+      obj.inspect
+    end
   end
 end
