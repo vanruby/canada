@@ -23,9 +23,9 @@ Cool, eh?
 
 Yes.
 
-## What about performacne?
+## What about performance?
 
-We tuned the gem's performacne so that it's inline with everything else in Canada.
+We hand-tuned the gem's performance to keep it in line with everything else in Canada.
 
 ## Installation
 
