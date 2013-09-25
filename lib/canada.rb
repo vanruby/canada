@@ -37,7 +37,7 @@ module Canada
         "however"
       ]
       
-      "#{prefix.sample}, #{connector.sample}"
+      "#{prefix.sample}, #{connector.sample} #{super}"
     end
   end
 
