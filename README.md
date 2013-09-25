@@ -52,3 +52,7 @@ Or install it yourself as:
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+## Product of Canada
+
+This gem is a 100% Canadian product. We hack on open-source projects like this every other Tuesday at [#VANRUBY](http://vanruby.org). If you would like to join us, check out our [meetup page](http://www.meetup.com/vancouver-ruby/) for details.
