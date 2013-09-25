@@ -25,7 +25,8 @@ Cool, eh?
 
 ## Production Ready™, eh?
 
-Yes.
+Yes. Proof: [![Build Status](https://travis-ci.org/vanruby/canada.png)](https://travis-ci.org/vanruby/canada)
+
 
 ## What about performance?
 
