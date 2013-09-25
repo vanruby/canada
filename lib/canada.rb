@@ -1,9 +1,9 @@
 require "canada/version"
 
 module Canada
-  EH_METHOD_REGEXP = /\A(?<method_name>.+)_eh\?\z/
-
   module ObjectExtensions
+    EH_METHOD_REGEXP = /\A(?<method_name>.+)_eh\?\z/
+
     def respond_to_missing?(meth, include_all = false)
       if (m = EH_METHOD_REGEXP.match(meth))
         super || self.respond_to?("#{m[:method_name]}?", include_all)
@@ -22,6 +22,14 @@ module Canada
   end
 
   ::Object.send(:include, ObjectExtensions)
+
+  module ExceptionExtensions
+    def to_s
+      "I'm sorry, but #{super}"
+    end
+  end
+
+  ::Exception.send(:prepend, ExceptionExtensions)
 
   module ::Kernel
     def aboot(obj)

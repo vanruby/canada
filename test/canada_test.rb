@@ -37,4 +37,9 @@ class CanadaTest < MiniTest::Test
 
     cases.each { |c| assert_equal c.inspect, aboot(c) }
   end
+
+  def test_exceptions_to_s
+    assert_equal "I'm sorry, but something went wrong...", Exception.new("something went wrong...").to_s
+    assert_equal "I'm sorry, but something went wrong...", Exception.new("something went wrong...").message
+  end
 end

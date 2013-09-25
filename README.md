@@ -15,6 +15,10 @@ It's well known that we have [different conventions](http://programmers.stackexc
 => true
 >> aboot Object.new
 => "#<Object:0x007f802b8b92c0>"
+>> raise "something went wrong..."
+RuntimeError: I'm sorry, but something went wrong...
+  from (irb):6
+  from /Users/godfrey/.rvm/rubies/ruby-2.0.0-p195/bin/irb:16:in `<main>'
 ```
 
 Cool, eh?
