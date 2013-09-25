@@ -25,7 +25,19 @@ module Canada
 
   module ExceptionExtensions
     def to_s
-      "I'm sorry, but #{super}"
+      prefix = [
+        "I'm sorry",
+        "Sorry",
+        "Pardon me",
+        "Hate to bother you"
+      ]
+      
+      connector = [
+        "but",
+        "however"
+      ]
+      
+      "#{prefix.sample}, #{connector.sample}"
     end
   end
 
