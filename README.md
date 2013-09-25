@@ -55,4 +55,4 @@ Or install it yourself as:
 
 ## Product of Canada
 
-This gem is a 100% Canadian product. We hack on open-source projects like this every other Tuesday at [#VANRUBY](http://vanruby.org). If you would like to join us, check out our [meetup page](http://www.meetup.com/vancouver-ruby/) for details.
+This gem is a 100% Canadian product and sweetened with 100% Canadian maple syrup. We hack on open-source projects like this every other Tuesday at [#VANRUBY](http://vanruby.org). If you would like to join us, check out our [meetup page](http://www.meetup.com/vancouver-ruby/) for details.
