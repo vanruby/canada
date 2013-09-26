@@ -24,20 +24,20 @@ module Canada
   ::Object.send(:include, ObjectExtensions)
 
   module ExceptionExtensions
+    # These are the building blocks for apologetic exception messages.
+    EX_PREFIX = [
+      "I'm sorry",
+      "Sorry",
+      "Pardon me",
+      "Hate to bother you"
+    ]
+    EX_CONNECTOR = [
+      "but",
+      "however"
+    ]
+
     def to_s
-      prefix = [
-        "I'm sorry",
-        "Sorry",
-        "Pardon me",
-        "Hate to bother you"
-      ]
-      
-      connector = [
-        "but",
-        "however"
-      ]
-      
-      "#{prefix.sample}, #{connector.sample} #{super}"
+      "#{EX_PREFIX.sample}, #{EX_CONNECTOR.sample} #{super}"
     end
   end
 

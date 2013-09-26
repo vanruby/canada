@@ -39,8 +39,8 @@ class CanadaTest < MiniTest::Test
   end
 
   def test_exceptions_to_s
-    prefix = "I'm sorry|Sorry|Pardon me|Hate to bother you"
-    connector = 'but|however'
+    prefix = Canada::ExceptionExtensions::EX_PREFIX.join('|')
+    connector = Canada::ExceptionExtensions::EX_CONNECTOR.join('|')
     msg = 'something went wrong...'
 
     assert_match /(#{prefix}), (#{connector}) #{msg}/, Exception.new(msg).to_s
