@@ -46,6 +46,8 @@ Or install it yourself as:
 
     $ gem install canada
 
+Note: This gem requires Ruby 2.0.0 or higher.
+
 ## Contributing
 
 1. Fork it
