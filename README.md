@@ -28,7 +28,7 @@ Cool, eh?
 Yes. Proof: [![Build Status](https://travis-ci.org/vanruby/canada.png)](https://travis-ci.org/vanruby/canada)
 
 
-## What about performance?
+## What aboot performance?
 
 We hand-tuned the gem's performance to keep it in line with everything else in Canada.
 
