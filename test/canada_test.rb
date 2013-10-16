@@ -1,10 +1,21 @@
-require 'minitest_helper'
+require_relative 'minitest_helper'
+require 'TimHortons'
 require 'canada'
+require 'canada/exceptions'
 
 class CanadaTest < MiniTest::Test
   def test_eh?
     assert [].empty_eh?
     refute [1,2,3].empty_eh?
+  end
+
+  def test_eh!
+    timmies = TimHortons.new
+    refute timmies.doughnutAvailable_eh?("maple")
+    assert timmies.doughnutAvailable_eh!("maple")
+    assert_raises(Canada::NotFromAroundHereError) do 
+    	[].empty_eh!
+    end
   end
 
   def test_respond_to_eh?
