@@ -46,4 +46,10 @@ class CanadaTest < MiniTest::Test
     assert_match /(#{prefix}), (#{connector}) #{msg}/, Exception.new(msg).to_s
     assert_match /(#{prefix}), (#{connector}) #{msg}/, Exception.new(msg).message
   end
+
+  def test_sorry_raises
+    assert_raises Exception do
+      sorry Exception.new("Take off, eh")
+    end
+  end
 end
