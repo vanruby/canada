@@ -47,5 +47,7 @@ module Canada
     def aboot(obj)
       obj.inspect
     end
+
+    alias :sorry :raise
   end
 end
