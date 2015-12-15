@@ -3,10 +3,13 @@ require "canada/version"
 module Canada
   module ObjectExtensions
     EH_METHOD_REGEXP = /\A(?<method_name>.+)_eh\?\z/
+    PLEASE_METHOD_REGEXP = /\A(?<method_name>.+)_please\z/
 
     def respond_to_missing?(meth, include_all = false)
       if (m = EH_METHOD_REGEXP.match(meth))
         super || self.respond_to?("#{m[:method_name]}?", include_all)
+      elsif (m = PLEASE_METHOD_REGEXP.match(meth))
+        super || self.respond_to?("#{m[:method_name]}!", include_all)
       else
         super
       end
@@ -15,6 +18,8 @@ module Canada
     def method_missing(meth, *args, &block)
       if (m = EH_METHOD_REGEXP.match(meth))
         self.public_send("#{m[:method_name]}?", *args, &block)
+      elsif (m = PLEASE_METHOD_REGEXP.match(meth))
+        self.public_send("#{m[:method_name]}!", *args, &block)
       else
         super
       end

@@ -23,6 +23,26 @@ class CanadaTest < MiniTest::Test
     no.each { |n| refute([].respond_to?(n), "Array should not respond_to_eh? #{n}") }
   end
 
+  def test_please
+    expectations = {
+      capitalize_please: ['good day', "Good day"],
+      chomp_please: ["Good Day\n", 'Good Day'],
+      chop_please: ['Good Day!', 'Good Day'],
+      downcase_please: ['Good Day', 'good day'],
+      lstrip_please: [' Good Day', 'Good Day'],
+      reverse_please: ['Good Day', 'yaD dooG'],
+      rstrip_please: ['Good Day ', 'Good Day'],
+      succ_please: ['Good Day', 'Good Daz'],
+      upcase_please: ['Good Day', 'GOOD DAY']
+    }
+
+    expectations.each do |m, (before, after)|
+      before.send m
+      assert(before == after, "String##{m} should equal #{after}")
+      assert(before.respond_to?(m), "String should respond_to? #{m}")
+    end
+  end
+
   def test_aboot
     cases = [
       [],
