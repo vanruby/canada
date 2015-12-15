@@ -19,8 +19,8 @@ class CanadaTest < MiniTest::Test
     yes = [:empty?, :empty_eh?, :respond_to?, :respond_to_eh?]
     no = [:not_there, :not_there?, :not_there_eh, :not_there_eh?]
 
-    yes.each { |y| assert([].respond_to?(y), "Array should respond_to_eh? #{y}") }
-    no.each { |n| refute([].respond_to?(n), "Array should not respond_to_eh? #{n}") }
+    yes.each { |y| assert([].respond_to?(y), "Array should respond_to? #{y}") }
+    no.each { |n| refute([].respond_to?(n), "Array should not respond_to? #{n}") }
   end
 
   def test_aboot
