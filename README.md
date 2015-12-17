@@ -13,6 +13,10 @@ It's well known that we have [different conventions](http://programmers.stackexc
 => false
 >> [].respond_to_eh?(:empty_eh?)
 => true
+>> str = 'You Hoser'
+>> str.upcase_please
+>> str
+=> 'YOU HOSER'
 >> aboot Object.new
 => "#<Object:0x007f802b8b92c0>"
 >> raise "something went wrong..."
